@@ -1,0 +1,7 @@
+DROP TABLE 【XI】CCList;
+
+CREATE TABLE 【XI】CCList (
+	 ListNo							 NUMERIC(04),
+	 ListID							 VARCHAR(80),
+	 Name							 VARCHAR(80)
+);
