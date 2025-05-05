@@ -1,0 +1,15 @@
+DROP TABLE ÅyXIÅzCCTokenResponse;
+
+CREATE TABLE ÅyXIÅzCCTokenResponse
+(
+	expires_in				 VARCHAR(10),
+	scope					 VARCHAR(256),
+	token_type				 VARCHAR(50),
+	access_token				 VARCHAR(4000),
+	refresh_token				 VARCHAR(256),
+	refresh_expires_in			 VARCHAR(20),
+	id_token					 VARCHAR(4000),
+	geolocation				 VARCHAR(256),
+	ç≈èIçXêV					 TIMESTAMP,
+	óLå¯ä˙å¿					 TIMESTAMP
+);

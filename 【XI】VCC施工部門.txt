@@ -1,0 +1,20 @@
+DROP VIEW 【XI】VCC施工部門;
+
+CREATE VIEW 【XI】VCC施工部門 AS
+ SELECT
+	 A.level1code								 AS レベル1コード,
+	 B.level2code								 AS レベル2コード,
+	 C.level3code								 AS レベル3コード,
+	 D.level4code								 AS レベル4コード,
+	 A.name									 AS レベル1名称,
+	 B.name									 AS レベル2名称,
+	 C.name									 AS レベル3名称,
+	 D.name									 AS レベル4名称
+ FROM 【XI】CCListItem A
+	 LEFT JOIN 【XI】CCListItem B ON A.id = B.parentid
+	 LEFT JOIN 【XI】CCListItem C ON B.id = C.parentid
+	 LEFT JOIN 【XI】CCListItem D ON C.id = D.parentid
+ WHERE A.listid = 'gWlKnmz6PvmEopNx7RjSVeJiPO0wyO16nFQ'
+   AND A.parentid IS NULL
+ ORDER BY A.level1code ASC , B.level2code ASC
+;

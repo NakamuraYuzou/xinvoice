@@ -1,0 +1,19 @@
+DROP TABLE 【XI】BB請求先明細マスタ;
+
+CREATE TABLE 【XI】BB請求先明細マスタ (
+	 明細管理番号						 SERIAL,
+	 件名管理番号						 INTEGER,
+	 チェックパターン					 VARCHAR(02),
+	 明細パターン						 VARCHAR(02),
+	 明細項目							 VARCHAR(100),
+	 明細部門名						 VARCHAR(100),
+	 明細備考							 VARCHAR(100),
+	 費用区分							 VARCHAR(02),
+	 費用区分名						 VARCHAR(20),
+	 工事コード						 VARCHAR(10),
+	 工事詳細コード						 VARCHAR(10),
+	 工事名							 VARCHAR(140),
+	 部門コード						 VARCHAR(10),
+	 部門名							 VARCHAR(40),
+	 最終マッチ日						 TIMESTAMP
+);

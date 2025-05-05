@@ -1,0 +1,8 @@
+DROP TABLE 【XI】社員マスタ;
+
+CREATE TABLE 【XI】社員マスタ (
+	 社員コード						 VARCHAR(10),
+	 氏名								 VARCHAR(40),
+	 部署名							 VARCHAR(100),
+	 メアド							 VARCHAR(40)
+);

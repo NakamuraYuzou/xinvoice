@@ -1,0 +1,6 @@
+DROP TABLE 【XI】経費タイプ;
+
+CREATE TABLE 【XI】経費タイプ (
+	 コード							 VARCHAR(10),
+	 経費タイプ						 VARCHAR(80)
+);

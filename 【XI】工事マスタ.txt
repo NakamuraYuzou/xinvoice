@@ -1,0 +1,10 @@
+DROP TABLE 【XI】工事マスタ;
+
+CREATE TABLE 【XI】工事マスタ (
+	 工事コード						 VARCHAR(20),
+	 工事詳細コード						 VARCHAR(10),
+	 工事名称							 VARCHAR(140),
+	 工事略称							 VARCHAR(80),
+	 部門コード						 VARCHAR(20),
+	 部門名称							 VARCHAR(40)
+);

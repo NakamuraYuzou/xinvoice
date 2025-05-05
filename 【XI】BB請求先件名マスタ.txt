@@ -1,0 +1,19 @@
+DROP TABLE 【XI】BB請求先件名マスタ;
+
+CREATE TABLE 【XI】BB請求先件名マスタ (
+	 件名管理番号						 SERIAL,
+	 チェックパターン					 VARCHAR(02),
+	 請求元							 VARCHAR(120),
+	 請求先							 VARCHAR(200),
+	 件名								 VARCHAR(100),
+	 費用区分							 VARCHAR(02),
+	 費用区分名						 VARCHAR(20),
+	 工事コード						 VARCHAR(10),
+	 工事詳細コード						 VARCHAR(10),
+	 工事名							 VARCHAR(140),
+	 部門コード						 VARCHAR(10),
+	 部門名							 VARCHAR(40),
+	 起票者メアド						 VARCHAR(40),
+	 起票者名							 VARCHAR(40),
+	 最終マッチ日						 TIMESTAMP
+);
