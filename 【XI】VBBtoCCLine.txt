@@ -1,0 +1,66 @@
+DROP VIEW 【XI】VBBtoCCLine;
+
+CREATE VIEW 【XI】VBBtoCCLine AS
+ SELECT
+	 A.【全体情報】請求書管理コード					 AS 請求書管理コード,
+	 A.【全体情報】請求書管理番号						 AS 請求書管理番号,
+	 A.【おもて情報】請求書番号						 AS 請求書番号,
+	 A.【おもて情報】今回請求金額＃税抜					 AS 税抜請求金額,
+	 B.取引先コード									 AS 取引先コード,
+	 B.請求元										 AS 請求元,
+	 E.取引先コード									 AS パターン取引先コード,
+	 CASE
+		 WHEN E.経費タイプコード08 IS NULL THEN B.経費タイプコード08
+		 ELSE E.経費タイプコード08					
+	 END											 AS 経費タイプコード08,
+	 CASE
+		 WHEN E.経費タイプ名称08 IS NULL THEN B.経費タイプ名称08
+		 ELSE E.経費タイプ名称08					
+	 END											 AS 経費タイプ名称08,
+	 CASE
+		 WHEN E.経費タイプコード10 IS NULL THEN B.経費タイプコード10
+		 ELSE E.経費タイプコード10					
+	 END											 AS 経費タイプコード10,
+	 CASE
+		 WHEN E.経費タイプ名称10 IS NULL THEN B.経費タイプ名称10
+		 ELSE E.経費タイプ名称10					
+	 END											 AS 経費タイプ名称10,
+	 CASE
+		 WHEN D.費用区分 IS NULL THEN C.費用区分
+		 ELSE D.費用区分
+	 END											 AS 費用区分,
+	 CASE
+		 WHEN D.費用区分 IS NULL THEN C.工事コード
+		 ELSE D.工事コード
+	 END											 AS 工事コード,
+	 CASE
+		 WHEN D.費用区分 IS NULL THEN C.工事詳細コード
+		 ELSE D.工事詳細コード
+	 END											 AS 工事詳細コード,
+	 CASE
+		 WHEN D.費用区分 IS NULL THEN C.部門コード
+		 ELSE D.部門コード
+	 END											 AS 部門コード,
+	 A.【明細情報】明細連番							 AS 明細連番,
+	 A.【明細情報】明細番号							 AS 明細番号,
+	 A.【明細情報】明細項目							 AS 明細項目,
+	 A.【明細情報】部門名							 AS 明細部門名,
+	 A.【明細情報】単価								 AS 単価,
+	 A.【明細情報】単位								 AS 単位,
+	 A.【明細情報】数量								 AS 数量,
+	 A.【明細情報】税率								 AS 税率,
+	 A.【明細情報】金額								 AS 金額,
+	 A.【明細情報】消費税額							 AS 消費税額,
+	 A.【明細情報】請求金額							 AS 請求金額,
+	 A.【明細情報】明細備考							 AS 明細備考
+ FROM 【XI】BBCsv A
+	 INNER JOIN 【XI】BB請求元マスタ B ON A.【おもて情報】請求元 = B.請求元
+	 INNER JOIN 【XI】BB請求先件名マスタ C ON A.【追加情報】件名管理番号 = C.件名管理番号
+	 LEFT JOIN 【XI】BB請求先明細マスタ D ON A.【追加情報】明細管理番号 = D.明細管理番号
+	 LEFT JOIN 【XI】経費タイプパターン E ON B.取引先コード = E.取引先コード
+								 AND B.請求元 = E.請求元
+								 AND A.【明細情報】明細項目 LIKE E.パターン
+ WHERE A.【追加情報】ステータス = '20'
+    AND  A.【明細情報】明細日付 IS NOT NULL
+ ORDER BY A.【全体情報】請求書管理コード ASC , A.【明細情報】明細連番
+;

@@ -1,0 +1,10 @@
+DROP VIEW 【XI】VBB請求元不在;
+
+CREATE VIEW 【XI】VBB請求元不在 AS
+ SELECT
+	  A.【おもて情報】請求元								 AS 請求元
+ FROM 【XI】BBCSV A
+	 LEFT JOIN 【XI】BB請求元マスタ B ON A.【おもて情報】請求元 = B.請求元
+ WHERE A.【追加情報】ステータス = '10'
+   AND B.請求元 IS null
+ GROUP BY A.【おもて情報】請求元;
