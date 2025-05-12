@@ -1,0 +1,13 @@
+DROP VIEW 【XI】VBB明細マッチ数;
+
+CREATE VIEW 【XI】VBB明細マッチ数 AS
+ SELECT
+	  【全体情報】請求書管理コード						 AS 請求書管理コード,
+	  COUNT(*)									 AS 明細総数,
+	  COUNT( 【追加情報】ステータス = '72'  OR NULL)		 AS 明細マッチ数
+ FROM 【XI】BBCsv
+ WHERE 【追加情報】ステータス IN ( '71' , '72' )
+    AND  【明細情報】明細日付 IS NOT NULL
+ GROUP BY 【全体情報】請求書管理コード
+ ORDER BY 【全体情報】請求書管理コード ASC
+;

@@ -1,0 +1,20 @@
+DROP TABLE 【XI】CCListItem;
+
+CREATE TABLE 【XI】CCListItem (
+	 ListID							 VARCHAR(80),
+	 Name							 VARCHAR(80),
+	 ParentID						 VARCHAR(80),
+	 Level1Code						 VARCHAR(80),
+	 Level2Code						 VARCHAR(80),
+	 Level3Code						 VARCHAR(80),
+	 Level4Code						 VARCHAR(80),
+	 Level5Code						 VARCHAR(80),
+	 Level6Code						 VARCHAR(80),
+	 Level7Code						 VARCHAR(80),
+	 Level8Code						 VARCHAR(80),
+	 Level9Code						 VARCHAR(80),
+	 Level10Code						 VARCHAR(80),
+	 IsDeleted						 VARCHAR(80),
+	 ID							 VARCHAR(80),
+	 URI							 VARCHAR(140)
+);

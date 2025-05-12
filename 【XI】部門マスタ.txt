@@ -1,0 +1,7 @@
+DROP TABLE 【XI】部門マスタ;
+
+CREATE TABLE 【XI】部門マスタ (
+	 部門コード						 VARCHAR(20),
+	 部門名称							 VARCHAR(40),
+	 部門略称							 VARCHAR(20)
+);

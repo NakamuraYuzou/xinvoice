@@ -1,0 +1,8 @@
+DROP TABLE 【XI】BB取込履歴;
+
+CREATE TABLE 【XI】BB取込履歴 (
+	 履歴番号							 SERIAL,
+	 取込日時							 TIMESTAMP,
+	 ファイル名						 VARCHAR(120),
+	 件数								 NUMERIC(06)
+);

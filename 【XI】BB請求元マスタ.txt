@@ -1,0 +1,10 @@
+DROP TABLE 【XI】BB請求元マスタ;
+
+CREATE TABLE 【XI】BB請求元マスタ (
+	 取引先コード						 VARCHAR(10),
+	 請求元							 VARCHAR(120),
+	 経費タイプコード08					 VARCHAR(10),
+	 経費タイプ名称08					 VARCHAR(100),
+	 経費タイプコード10					 VARCHAR(10),
+	 経費タイプ名称10					 VARCHAR(100)
+);

@@ -1,0 +1,13 @@
+DROP VIEW 【XI】VBBステータス別件数;
+
+CREATE VIEW 【XI】VBBステータス別件数 AS
+ SELECT
+	  A.【追加情報】ステータス								 AS ステータス,
+	  COUNT(*)										 AS 件数
+ FROM ( SELECT 【全体情報】請求書管理コード , 【追加情報】ステータス
+		 FROM 【XI】BBCsv
+		 GROUP BY 【全体情報】請求書管理コード , 【追加情報】ステータス
+	 ) A
+ GROUP BY 【追加情報】ステータス
+ ORDER BY 【追加情報】ステータス ASC
+;
