@@ -44,8 +44,8 @@ public class XICCTokenResponseAcc
 
 	public static XICCTokenResponse getResponseFromApi( XICCTokenResponse oldtoken ) throws Exception
 	{
-		String client_id = URLEncoder.encode( "81aee099-f255-4814-87fb-1fc5aae102f6" , "utf-8" );
-		String client_secret = URLEncoder.encode( "c9a67e10-9858-4893-b078-763afc3b85dc" , "utf-8" );
+		String client_id = URLEncoder.encode( "xxxxxxxxxxxx" , "utf-8" );
+		String client_secret = URLEncoder.encode( "xxxxxxxxxxxxxxxxxxx" , "utf-8" );
 
 		String host = oldtoken.getGeolocation() + "/oauth2/v0/token";
 		String reftoken = URLEncoder.encode( oldtoken.getRefreshToken() , "utf-8" );
