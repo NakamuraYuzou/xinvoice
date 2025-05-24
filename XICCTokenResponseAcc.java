@@ -74,10 +74,10 @@ public class XICCTokenResponseAcc
 		XIHttpConnect con = new XIHttpConnect( host );
 
 		con.setRequestMethod("POST");
-		String client_id = URLEncoder.encode( "81aee099-f255-4814-87fb-1fc5aae102f6" , "utf-8" );
-		String client_secret = URLEncoder.encode( "c9a67e10-9858-4893-b078-763afc3b85dc" , "utf-8" );
-		String username = URLEncoder.encode( "WSAdmin_INV@sadenko.co.jp" , "utf-8" );
-		String password = URLEncoder.encode( "E!F57a03aBEef5A&" , "utf-8" );
+		String client_id = URLEncoder.encode( "xxxxxxxxxxxxxxx" , "utf-8" );
+		String client_secret = URLEncoder.encode( "xxxxxxxxxxx" , "utf-8" );
+		String username = URLEncoder.encode( "xxxxxxxxxxx" , "utf-8" );
+		String password = URLEncoder.encode( "xxxxxxxxxxxxxxx" , "utf-8" );
 		String prm = "client_id=" + client_id
 					+ "&client_secret=" + client_secret
 					+ "&grant_type=password"
